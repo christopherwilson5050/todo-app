@@ -2,6 +2,8 @@ from functions import *
 import time
 date = time.strftime("%d/%m/%Y, %H:%M:%S")
 print(date)
+print(date)
+
 while True:
 
     user_promp = input("type add or show or edit or exit or complete: ")
