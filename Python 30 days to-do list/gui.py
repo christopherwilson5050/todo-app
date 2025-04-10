@@ -1,6 +1,11 @@
 from functions import *
 import FreeSimpleGUI as fsg
 import time
+import os
+
+if not os.path.exists('todostore.txt'):
+    with open('todostore.txt', 'w') as file:
+        pass
 
 fsg.theme('DarkTeal12')
 
@@ -10,7 +15,7 @@ input_box = fsg.InputText(tooltip="Enter a task to do", key="addtask")
 add_button = fsg.Button("Add")
 list_todo = fsg.Listbox(values=get_todos(), key='listtodos',enable_events=True, size=[50, 20])
 edit_button = fsg.Button("Edit")
-completed_button = fsg.Button("Complete")
+completed_button = fsg.Button(size=10, image_source='complete.png', mouseover_colors='DarkGrey', tooltip="Complete a task", key='Complete')
 exit_button = fsg.Button("Exit")
 
 inputWindow = fsg.Window('My To-Do App',
